@@ -1,4 +1,17 @@
 # Python program for implementation of Insertion Sort
+/*
+ * Precondition:  len(arr) is the number of items that are
+ *    stored in arr.  These items must be in increasing order
+ *    (arr[0] <= arr[1] <= ... <= arr[len(arr-1]).
+ *    The array size is at least one greater than len(arr).
+ * Postcondition:  The number of items has increased by one,
+ *    newItem has been added to the array, and all the items
+ *    in the array are still in increasing order.
+ * Note:  To complete the process of inserting an item in the
+ *    array, the variable that counts the number of items
+ *    in the array must be incremented, after calling this
+ *    subroutine.
+ */
 
 # Algorithm
 # To sort an array of size n in ascending order: 
@@ -16,12 +29,14 @@ def insertionSort(arr):
 		# Move elements of arr[0..i-1], that are
         	# greater than key, to one position ahead
         	# of their current position
-		
-		j=i-1
-		while j>=0 and key < arr[j]:
-			arr[j + 1] = arr[j]
+
+		#Start at the end of the array
+		loc = i-1
+
+		while loc>=0 and key < arr[j]:
+			arr[loc + 1] = arr[loc]
 			j -= 1
-		arr[j + 1] = key
+		arr[loc + 1] = key
 
 # Developer code to test above
 arr = [12, 11, 13, 5, 6,10]
